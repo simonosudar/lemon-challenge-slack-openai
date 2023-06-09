@@ -1,0 +1,18 @@
+{
+  "name": "lemon-challenge-slack-openai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/web-api": "^6.8.1",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "gpt3-tokenizer": "^1.1.5",
+    "openai": "^3.2.1"
+  }
+}
