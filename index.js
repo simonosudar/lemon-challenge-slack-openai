@@ -48,7 +48,7 @@ async function fetchSlackConversation(timePeriod = 'day') {
 
     let conversationMessages = [];
     for (const message of result.messages.reverse()) {
-        if (!message.subtype || (message.subtype !== 'channel_join' && message.subtype !== 'group_join') && message.user !== "LimaLimBot") {
+        if (!message.subtype || (message.subtype !== 'channel_join' && message.subtype !== 'group_join')) {
             let userName = '';
             try {
                 const userInfo = await slack.users.info({ user: message.user });
@@ -100,7 +100,7 @@ async function generateSummary(conversation) {
 }
 
 async function processEvent(event) {
-    if ((event.type === 'app_mention' || event.type === 'message') && event.user !== process.env.BOT_USER_ID) {
+    if ((event.type === 'app_mention' || event.type === 'message')) {
         let messageText = event.text;
         let channelId = event.channel;
 
